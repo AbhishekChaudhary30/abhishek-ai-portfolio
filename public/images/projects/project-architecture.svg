@@ -1,0 +1,35 @@
+
+<svg width="800" height="450" viewBox="0 0 800 450" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="rgba(128,128,128,0.1)" stroke-width="1" />
+    </pattern>
+  </defs>
+  <rect width="800" height="450" fill="transparent" />
+  <rect width="800" height="450" fill="url(#grid)" />
+  
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="var(--color-primary)" />
+    </marker>
+  </defs>
+
+  <rect x="150" y="100" width="150" height="60" rx="8" fill="transparent" stroke="var(--color-muted-foreground)" stroke-width="2" />
+  <text x="225" y="135" font-family="monospace" font-size="14" fill="var(--color-foreground)" text-anchor="middle">Frontend Layer</text>
+
+  <rect x="450" y="100" width="150" height="60" rx="8" fill="transparent" stroke="var(--color-primary)" stroke-width="2" />
+  <text x="525" y="135" font-family="monospace" font-size="14" fill="var(--color-foreground)" text-anchor="middle">API Gateway</text>
+
+  <rect x="150" y="300" width="150" height="60" rx="8" fill="transparent" stroke="var(--color-muted-foreground)" stroke-width="2" />
+  <text x="225" y="335" font-family="monospace" font-size="14" fill="var(--color-foreground)" text-anchor="middle">Data Lake</text>
+
+  <rect x="450" y="300" width="150" height="60" rx="8" fill="transparent" stroke="var(--color-primary)" stroke-width="2" />
+  <text x="525" y="335" font-family="monospace" font-size="14" fill="var(--color-foreground)" text-anchor="middle">ML Services</text>
+
+  <path d="M 300 130 L 450 130" stroke="var(--color-primary)" stroke-width="2" marker-end="url(#arrowhead)" />
+
+  <path d="M 525 160 L 525 300" stroke="var(--color-primary)" stroke-width="2" marker-end="url(#arrowhead)" />
+
+  <path d="M 450 330 L 300 330" stroke="var(--color-primary)" stroke-width="2" marker-end="url(#arrowhead)" />
+
+</svg>

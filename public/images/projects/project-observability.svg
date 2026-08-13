@@ -1,0 +1,30 @@
+
+<svg width="800" height="450" viewBox="0 0 800 450" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="rgba(128,128,128,0.1)" stroke-width="1" />
+    </pattern>
+  </defs>
+  <rect width="800" height="450" fill="transparent" />
+  <rect width="800" height="450" fill="url(#grid)" />
+  
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="var(--color-primary)" />
+    </marker>
+  </defs>
+
+  <rect x="100" y="200" width="120" height="60" rx="8" fill="transparent" stroke="var(--color-muted-foreground)" stroke-width="2" />
+  <text x="160" y="235" font-family="monospace" font-size="14" fill="var(--color-foreground)" text-anchor="middle">App Telemetry</text>
+
+  <rect x="300" y="200" width="150" height="60" rx="8" fill="transparent" stroke="var(--color-primary)" stroke-width="2" />
+  <text x="375" y="235" font-family="monospace" font-size="14" fill="var(--color-foreground)" text-anchor="middle">Eval Engine</text>
+
+  <rect x="530" y="200" width="150" height="60" rx="8" fill="transparent" stroke="var(--color-muted-foreground)" stroke-width="2" />
+  <text x="605" y="235" font-family="monospace" font-size="14" fill="var(--color-foreground)" text-anchor="middle">Observability UI</text>
+
+  <path d="M 220 230 L 300 230" stroke="var(--color-primary)" stroke-width="2" marker-end="url(#arrowhead)" />
+
+  <path d="M 450 230 L 530 230" stroke="var(--color-primary)" stroke-width="2" marker-end="url(#arrowhead)" />
+
+</svg>
