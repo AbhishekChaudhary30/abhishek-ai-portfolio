@@ -1,6 +1,6 @@
 "use client"
 
-// import Image from "next/image"
+import Image from "next/image"
 import { profile } from "@/data/profile"
 
 export function About() {
@@ -13,22 +13,13 @@ export function About() {
           {/* Left: Profile Image */}
           <div className="lg:col-span-5 relative group">
             <div className="aspect-[4/5] relative rounded-2xl overflow-hidden border border-border shadow-sm transition-all duration-500 group-hover:shadow-xl group-hover:border-primary/50">
-              {/* Optional: Add an actual image to /public/images/profile.webp */}
-              <div className="absolute inset-0 bg-secondary flex items-center justify-center transition-colors duration-500 group-hover:bg-secondary/90">
-                <svg className="w-24 h-24 text-muted-foreground/20" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
-                </svg>
-              </div>
-              
-              {/* If using real image:
               <Image 
-                src="/images/profile.webp" 
+                src="/images/projects/pic.png" 
                 alt={profile.name}
                 fill
-                className="object-cover transition-transform duration-700 group-hover:scale-105"
+                className="object-cover object-top transition-transform duration-700 group-hover:scale-105"
                 sizes="(max-width: 768px) 100vw, 40vw"
               />
-              */}
               
               {/* Overlay highlight */}
               <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
@@ -45,27 +36,13 @@ export function About() {
             </span>
             
             <h2 className="text-3xl md:text-4xl font-bold text-foreground tracking-tight">
-              Engineering AI Systems for Scale
+              Engineering Production-Ready AI Systems
             </h2>
             
             <div className="space-y-4 text-lg text-muted-foreground font-light leading-relaxed">
-              <p>
-                {profile.bio}
-              </p>
-              
-              <div className="my-6 p-6 bg-secondary/50 border border-border rounded-xl">
-                <h3 className="text-sm font-bold tracking-widest uppercase text-foreground mb-4 flex items-center gap-2">
-                  <span className="w-2 h-2 rounded-full bg-primary"></span>
-                  Training & Learning
-                </h3>
-                <p className="text-base text-muted-foreground/90 leading-relaxed font-normal">
-                  Completed two years of intensive software development and technology training at <strong className="text-foreground">Madrid Software, Saket, New Delhi</strong>. Focused on practical development, programming fundamentals, and project-based learning.
-                </p>
-              </div>
-
-              <p>
-                Through this project-driven development, I have specialized in bridging the gap between theoretical machine learning and practical application. My focus is on designing, evaluating, and deploying robust AI systems—from Large Language Models (LLMs) and Retrieval-Augmented Generation (RAG) to autonomous agentic workflows.
-              </p>
+              {profile.bio.split('\n\n').map((paragraph, idx) => (
+                <p key={idx}>{paragraph}</p>
+              ))}
             </div>
             
             {/* AI Engineering Focus Strip */}
@@ -98,11 +75,17 @@ export function About() {
                   <div className="w-12 h-12 rounded-full bg-secondary border border-border flex items-center justify-center text-muted-foreground hover:text-primary hover:border-primary/50 transition-colors">
                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M12 2v20"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
                   </div>
-                  <span className="text-xs font-medium text-foreground">AI<br/>Automation</span>
+                  <span className="text-xs font-medium text-foreground">AI<br/>Systems</span>
+                </div>
+              </div>
+              
+              <div className="mt-8 pt-6 border-t border-border">
+                <h4 className="text-xs font-bold tracking-widest text-primary uppercase mb-4">Core Technology Stack</h4>
+                <div className="flex flex-wrap gap-2 text-sm text-muted-foreground font-medium">
+                  Python &bull; PyTorch &bull; FastAPI &bull; RAG &bull; LangGraph &bull; Docker &bull; MLflow
                 </div>
               </div>
             </div>
-
             
           </div>
           

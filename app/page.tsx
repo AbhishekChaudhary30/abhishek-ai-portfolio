@@ -1,5 +1,5 @@
 import { Hero } from "@/components/sections/Hero";
-import { CurrentBuilding } from "@/components/sections/CurrentBuilding";
+import { FeaturedProjects } from "@/components/sections/FeaturedProjects";
 import { About } from "@/components/sections/About";
 import { Capabilities } from "@/components/sections/Capabilities";
 import { TechStack } from "@/components/sections/TechStack";
@@ -11,7 +11,7 @@ export default function Home() {
   return (
     <>
       <Hero />
-      <CurrentBuilding />
+      <FeaturedProjects />
       <About />
       <Capabilities />
       <TechStack />

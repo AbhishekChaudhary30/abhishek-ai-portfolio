@@ -1,5 +1,8 @@
+"use client"
+
 import Link from "next/link"
-import Image from "next/image"
+import { useState } from "react"
+import { ProjectVisuals } from "@/components/ui/ProjectVisuals"
 import { Project } from "@/types"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
@@ -11,6 +14,7 @@ interface ProjectCardProps {
 }
 
 export function ProjectCard({ project }: ProjectCardProps) {
+  const [isHovered, setIsHovered] = useState(false)
   
   // Status color mapping
   const statusColors = {
@@ -21,20 +25,16 @@ export function ProjectCard({ project }: ProjectCardProps) {
   }
 
   return (
-    <div className="group premium-card flex flex-col h-full relative overflow-hidden bg-secondary border-border/50 transition-all duration-500 hover:border-primary/50 hover:-translate-y-2 hover:shadow-lg">
+    <div 
+      className="group premium-card flex flex-col h-full relative overflow-hidden bg-secondary border-border/50 transition-all duration-500 hover:border-primary/50 hover:-translate-y-2 hover:shadow-lg"
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
+    >
       
       {/* Image Container with Zoom & Overlay */}
       <div className="relative aspect-video overflow-hidden bg-muted/50">
         
-        {project.image && (
-          <Image 
-            src={project.image} 
-            alt={project.title} 
-            fill 
-            className="object-cover transition-transform duration-700 group-hover:scale-105"
-            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-          />
-        )}
+        <ProjectVisuals slug={project.slug} isHovered={isHovered} />
         
         {/* Status Badge - Always visible */}
         <div className="absolute top-4 right-4 z-10">

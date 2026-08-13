@@ -4,15 +4,15 @@ export const experiences: Experience[] = [
   {
     id: "train-1",
     company: "Madrid Software",
-    role: "Software Development & Technology Training",
-    startDate: "2 Years",
-    endDate: "",
-    description: "Completed intensive software development and technology training at Madrid Software, Saket, New Delhi. Focused on practical development, programming fundamentals, and project-based learning.",
-    technologies: ["Python", "Machine Learning", "Data Structures", "Web Technologies", "Databases"],
+    role: "AI/ML & Software Engineering Training",
+    startDate: "2025",
+    endDate: "Present",
+    description: "Continuing structured training and self-directed learning in AI/ML and software engineering since 2025, with a strong focus on practical development and project-based learning.",
+    technologies: ["Python", "Machine Learning", "Deep Learning", "LLMs", "RAG"],
     achievements: [
-      "Mastered software development fundamentals and application development.",
-      "Completed rigorous project-driven training in advanced programming concepts.",
-      "Built practical, hands-on projects bridging theory with real-world implementation."
+      "Building practical expertise in AI/ML, LLM engineering, RAG, and Agentic AI through structured learning and hands-on projects.",
+      "Applying software engineering principles to design, develop, evaluate, and deploy AI-powered applications.",
+      "Developing portfolio-grade projects that translate technical concepts into practical, production-oriented systems."
     ]
   }
 ];

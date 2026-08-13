@@ -6,6 +6,7 @@ import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { ArrowLeft, ExternalLink, ChevronRight } from "lucide-react"
 import { Github } from "@/components/ui/icons"
+import { ProjectVisuals } from "@/components/ui/ProjectVisuals"
 
 // Generate static params for static export
 export function generateStaticParams() {
@@ -121,18 +122,11 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
             </div>
           </div>
 
-          {/* Architecture Visualization Placeholder */}
+          {/* System Architecture / Interactive Visual */}
           <div>
             <h3 className="text-2xl font-bold text-foreground mb-6">System Architecture</h3>
-            <div className="w-full aspect-video bg-card border border-border rounded-xl shadow-sm flex items-center justify-center relative overflow-hidden group">
-               <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px]" />
-               <div className="z-10 text-center">
-                 <div className="w-16 h-16 bg-primary/10 rounded-xl border border-primary mx-auto mb-4 flex items-center justify-center">
-                   <div className="w-8 h-8 bg-primary rounded-sm animate-pulse" />
-                 </div>
-                 <p className="text-muted-foreground text-sm font-medium">Interactive Architecture Diagram</p>
-                 <p className="text-muted-foreground/60 text-xs mt-2">Will use SVG / React Flow in Phase 3</p>
-               </div>
+            <div className="w-full aspect-video rounded-xl shadow-sm overflow-hidden group">
+               <ProjectVisuals slug={project.slug} isHovered={true} />
             </div>
           </div>
 

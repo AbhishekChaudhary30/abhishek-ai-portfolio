@@ -29,8 +29,8 @@ export function ThemeSwitcher() {
             ? "bg-primary text-primary-foreground shadow-sm" 
             : "text-muted-foreground hover:text-foreground hover:bg-muted"
         )}
-        aria-label="Linear Aesthetic"
-        title="Linear Aesthetic"
+        aria-label="Theme: Dark"
+        title="Theme: Dark"
       >
         <Layers size={16} />
       </button>
@@ -43,8 +43,8 @@ export function ThemeSwitcher() {
             ? "bg-primary text-primary-foreground shadow-sm" 
             : "text-muted-foreground hover:text-foreground hover:bg-muted"
         )}
-        aria-label="Cyber-Data"
-        title="Cyber-Data"
+        aria-label="Theme: Light"
+        title="Theme: Light"
       >
         <Cpu size={16} />
       </button>
@@ -57,8 +57,8 @@ export function ThemeSwitcher() {
             ? "bg-primary text-primary-foreground shadow-sm" 
             : "text-muted-foreground hover:text-foreground hover:bg-muted"
         )}
-        aria-label="Monochrome Minimalist"
-        title="Monochrome Minimalist"
+        aria-label="Theme: Medium"
+        title="Theme: Medium"
       >
         <Circle size={16} />
       </button>

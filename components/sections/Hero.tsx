@@ -19,26 +19,22 @@ export function Hero() {
           
           {/* Left Content */}
           <div className="max-w-2xl">
-            <span className="section-eyebrow animate-in fade-in slide-in-from-bottom-4 duration-700 delay-100 fill-mode-both">
-              AI / ML ENGINEER
-            </span>
-            
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-foreground tracking-tight leading-[1.1] mb-2 animate-in fade-in slide-in-from-bottom-8 duration-700 delay-200 fill-mode-both">
-              {profile.name}
+            <h1 className="text-4xl md:text-6xl font-extrabold text-foreground tracking-tight mb-4 animate-in fade-in slide-in-from-bottom-8 duration-700 delay-200 fill-mode-both">
+              Abhishek Chaudhary
             </h1>
             
             <h2 className="text-lg md:text-xl font-semibold text-primary mb-6 animate-in fade-in slide-in-from-bottom-8 duration-700 delay-300 fill-mode-both">
-              Agentic AI Developer & LLM Engineer
+              AI/ML ENGINEER • LLM & AGENTIC AI
             </h2>
             
             <p className="text-base md:text-lg text-muted-foreground mb-10 max-w-lg font-light leading-relaxed animate-in fade-in slide-in-from-bottom-8 duration-700 delay-400 fill-mode-both">
-              Building intelligent systems across LLM engineering, RAG, Agentic AI and AI-powered applications through project-driven engineering.
+              I design and build production-ready AI systems across LLM engineering, RAG, Agentic AI, and AI application development.
             </p>
             
             <div className="flex flex-wrap gap-4 animate-in fade-in slide-in-from-bottom-8 duration-700 delay-500 fill-mode-both">
               <Button asChild size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground rounded-full px-8 py-6 text-base group shadow-sm hover:shadow-md transition-all duration-300 border border-primary/50">
                 <Link href="/projects">
-                  Explore Projects
+                  View Projects
                   <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
                 </Link>
               </Button>
@@ -47,21 +43,14 @@ export function Hero() {
                   Explore AI Lab
                 </Link>
               </Button>
+              <Button asChild variant="outline" size="lg" className="rounded-full px-8 py-6 text-base border-border hover:bg-secondary text-foreground transition-all duration-300">
+                <a href={profile.resumeUrl} target="_blank" rel="noreferrer">
+                  View Resume
+                </a>
+              </Button>
             </div>
             
-            {/* Social Links under CTA */}
             <div className="mt-6 flex items-center gap-4 animate-in fade-in slide-in-from-bottom-8 duration-700 delay-600 fill-mode-both">
-              {profile.socials.find(s => s.name === "GitHub")?.url && (
-                <a 
-                  href={profile.socials.find(s => s.name === "GitHub")?.url} 
-                  target="_blank" 
-                  rel="noreferrer"
-                  className="flex items-center justify-center w-10 h-10 rounded-full border border-border bg-secondary text-muted-foreground hover:text-foreground hover:border-foreground transition-colors"
-                  aria-label="GitHub"
-                >
-                  <Github size={20} />
-                </a>
-              )}
               {profile.socials.find(s => s.name === "LinkedIn")?.url && (
                 <a 
                   href={profile.socials.find(s => s.name === "LinkedIn")?.url} 
@@ -83,7 +72,7 @@ export function Hero() {
               <span className="w-[1px] h-4 bg-border"></span>
               <span className="flex items-center gap-2"><span className="w-1.5 h-1.5 rounded-full bg-primary/70"></span> Agentic AI</span>
               <span className="w-[1px] h-4 bg-border"></span>
-              <span className="flex items-center gap-2"><span className="w-1.5 h-1.5 rounded-full bg-primary/70"></span> AI Automation</span>
+              <span className="flex items-center gap-2"><span className="w-1.5 h-1.5 rounded-full bg-primary/70"></span> AI Systems</span>
             </div>
           </div>
 
@@ -102,7 +91,7 @@ export function Hero() {
                   <div className="w-12 h-12 bg-card border border-border rounded-xl flex items-center justify-center shadow-lg transition-transform duration-700 group-hover:scale-110 group-hover:border-primary/50 relative z-10">
                     <div className="w-4 h-4 rounded-sm bg-muted-foreground/50" />
                   </div>
-                  <span className="text-[10px] text-muted-foreground font-mono">USER_INPUT</span>
+                  <span className="text-[10px] text-muted-foreground font-mono uppercase tracking-wider text-center">USER INPUT</span>
                 </div>
 
                 {/* 2. Core LLM Node */}
@@ -111,7 +100,7 @@ export function Hero() {
                     <div className="w-8 h-8 rounded-full border-2 border-primary border-t-transparent animate-spin duration-[3000ms]" />
                     <div className="absolute w-3 h-3 rounded-full bg-primary shadow-sm animate-pulse" />
                   </div>
-                  <span className="text-[10px] text-primary font-mono font-bold tracking-wider">LLM_ENGINE</span>
+                  <span className="text-[10px] text-primary font-mono font-bold tracking-wider text-center">LLM ENGINE</span>
                 </div>
 
                 {/* 3a. RAG / Vector DB Node (Top) */}
@@ -123,7 +112,7 @@ export function Hero() {
                       <div className="w-1.5 h-6 bg-muted-foreground/30 rounded-full" />
                     </div>
                   </div>
-                  <span className="text-[10px] text-muted-foreground font-mono">VECTOR_DB</span>
+                  <span className="text-[10px] text-muted-foreground font-mono uppercase tracking-wider text-center">RETRIEVAL / RAG<br/>VECTOR DB</span>
                 </div>
 
                 {/* 3b. Agentic Tools Node (Bottom) */}
@@ -131,7 +120,7 @@ export function Hero() {
                   <div className="w-14 h-14 bg-card border border-border rounded-full flex items-center justify-center shadow-lg transition-transform duration-700 group-hover:translate-y-2 group-hover:border-primary/40 relative z-10">
                     <div className="w-5 h-5 border-2 border-muted-foreground/50 rounded-sm rotate-45" />
                   </div>
-                  <span className="text-[10px] text-muted-foreground font-mono">AGENTS/TOOLS</span>
+                  <span className="text-[10px] text-muted-foreground font-mono uppercase tracking-wider text-center">AGENTS<br/>TOOLS</span>
                 </div>
 
                 {/* 4. Output Node */}
@@ -139,7 +128,7 @@ export function Hero() {
                   <div className="w-12 h-12 bg-primary/10 border border-primary/30 rounded-xl flex items-center justify-center shadow-lg transition-transform duration-700 group-hover:scale-110 relative z-10">
                     <div className="w-4 h-4 rounded-full bg-foreground" />
                   </div>
-                  <span className="text-[10px] text-muted-foreground font-mono">OUTPUT</span>
+                  <span className="text-[10px] text-muted-foreground font-mono uppercase tracking-wider text-center">OUTPUT</span>
                 </div>
                 
                 {/* Connecting SVG Lines */}

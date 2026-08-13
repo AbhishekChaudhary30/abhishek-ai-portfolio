@@ -55,11 +55,12 @@ export function Footer() {
           <div>
             <h4 className="font-semibold text-foreground mb-6 uppercase tracking-wider text-xs">AI Engineering</h4>
             <ul className="space-y-3 text-sm text-muted-foreground/70">
-              <li>Agentic Workflows</li>
-              <li>Retrieval-Augmented Generation</li>
-              <li>Computer Vision & Deep Learning</li>
-              <li>MLOps & AI Systems Deployment</li>
-              <li>Data Intelligence & Analytics</li>
+              <li>LLM Engineering</li>
+              <li>RAG Systems</li>
+              <li>Agentic AI</li>
+              <li>AI Systems</li>
+              <li>Machine Learning</li>
+              <li>AI Application Development</li>
             </ul>
           </div>
 
@@ -67,24 +68,15 @@ export function Footer() {
           <div>
             <h4 className="font-semibold text-foreground mb-6 uppercase tracking-wider text-xs">Have a Question?</h4>
             <div className="flex gap-4 mb-6">
-              {profile.socials.find(s => s.name === "GitHub")?.url && (
-                <a href={profile.socials.find(s => s.name === "GitHub")?.url} target="_blank" rel="noreferrer" className="h-10 w-10 rounded-full bg-secondary border border-border flex items-center justify-center text-muted-foreground hover:bg-primary hover:text-primary-foreground hover:border-primary/50 hover:-translate-y-1 transition-all duration-300">
-                  <Github size={18} />
-                  <span className="sr-only">GitHub</span>
-                </a>
-              )}
-              {profile.socials.find(s => s.name === "LinkedIn")?.url && (
-                <a href={profile.socials.find(s => s.name === "LinkedIn")?.url} target="_blank" rel="noreferrer" className="h-10 w-10 rounded-full bg-secondary border border-border flex items-center justify-center text-muted-foreground hover:bg-primary hover:text-primary-foreground hover:border-primary/50 hover:-translate-y-1 transition-all duration-300">
-                  <Linkedin size={18} />
-                  <span className="sr-only">LinkedIn</span>
-                </a>
-              )}
-              {profile.email && (
-                <a href={`mailto:${profile.email}`} className="h-10 w-10 rounded-full bg-secondary border border-border flex items-center justify-center text-muted-foreground hover:bg-primary hover:text-primary-foreground hover:border-primary/50 hover:-translate-y-1 transition-all duration-300">
-                  <Mail size={18} />
-                  <span className="sr-only">Email</span>
-                </a>
-              )}
+              <a href={profile.socials.find(s => s.name === "GitHub")?.url || "https://github.com/AbhishekChaudhary30"} target="_blank" rel="noreferrer" aria-label="GitHub" className="h-10 w-10 rounded-full bg-secondary border border-border flex items-center justify-center text-muted-foreground hover:bg-primary hover:text-primary-foreground hover:border-primary/50 hover:-translate-y-1 transition-all duration-300">
+                <Github size={18} />
+              </a>
+              <a href={profile.socials.find(s => s.name === "LinkedIn")?.url || "#"} target="_blank" rel="noreferrer" aria-label="LinkedIn" className="h-10 w-10 rounded-full bg-secondary border border-border flex items-center justify-center text-muted-foreground hover:bg-primary hover:text-primary-foreground hover:border-primary/50 hover:-translate-y-1 transition-all duration-300">
+                <Linkedin size={18} />
+              </a>
+              <a href={`mailto:${profile.email || "abhishekchaudhary8275@gmail.com"}`} aria-label="Email" className="h-10 w-10 rounded-full bg-secondary border border-border flex items-center justify-center text-muted-foreground hover:bg-primary hover:text-primary-foreground hover:border-primary/50 hover:-translate-y-1 transition-all duration-300">
+                <Mail size={18} />
+              </a>
             </div>
             {profile.resumeUrl ? (
               <Link 

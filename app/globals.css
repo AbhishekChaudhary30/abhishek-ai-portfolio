@@ -31,7 +31,7 @@
 
 @layer base {
   :root, [data-theme='linear'] {
-    /* Theme 1 - Linear Aesthetic */
+    /* Theme 1 - Linear Aesthetic (Dark Mode) */
     --bg-color: #0A0A0A;
     --fg-color: #F5F5F5;
     
@@ -41,7 +41,7 @@
     --secondary: #111111;
     --secondary-fg: #F5F5F5;
     
-    --muted: #111111;
+    --muted: #1A1A1A;
     --muted-fg: #A1A1AA;
     
     --card: #171717;
@@ -54,49 +54,49 @@
   }
   
   [data-theme='cyber'] {
-    /* Theme 2 - Cyber-Data */
-    --bg-color: #020617;
-    --fg-color: #F1F5F9;
+    /* Theme 2 - Cyber-Data (Light Mode) */
+    --bg-color: #FDFBF7;
+    --fg-color: #1A1A1A;
     
-    --primary: #06B6D4;
+    --primary: #8B1E3F;
     --primary-fg: #FFFFFF;
     
-    --secondary: #0B1220;
-    --secondary-fg: #F1F5F9;
+    --secondary: #F3F0EA;
+    --secondary-fg: #1A1A1A;
     
-    --muted: #0B1220;
-    --muted-fg: #94A3B8;
+    --muted: #EAE6DE;
+    --muted-fg: #4B5563;
     
-    --card: #111C2E;
-    --card-fg: #F1F5F9;
+    --card: #FFFFFF;
+    --card-fg: #1A1A1A;
     
-    --border-color: rgba(148,163,184,0.16);
+    --border-color: rgba(26,26,26,0.12);
     
-    --accent-highlight: #10B981;
-    --accent-secondary: #10B981;
+    --accent-highlight: #A7284F;
+    --accent-secondary: #A7284F;
   }
   
   [data-theme='monochrome'] {
-    /* Theme 3 - Monochrome Minimalist */
-    --bg-color: #000000;
-    --fg-color: #FFFFFF;
+    /* Theme 3 - Monochrome Minimalist (Medium Mode) */
+    --bg-color: #2C2A32;
+    --fg-color: #FDFBF7;
     
-    --primary: #FFFFFF;
-    --primary-fg: #000000;
+    --primary: #D98A8A;
+    --primary-fg: #1A1A1A;
     
-    --secondary: #080808;
-    --secondary-fg: #FFFFFF;
+    --secondary: #36343E;
+    --secondary-fg: #FDFBF7;
     
-    --muted: #080808;
-    --muted-fg: #A3A3A3;
+    --muted: #413F4A;
+    --muted-fg: #B3B0B8;
     
-    --card: #040404;
-    --card-fg: #FFFFFF;
+    --card: #25232A;
+    --card-fg: #FDFBF7;
     
-    --border-color: #262626;
+    --border-color: rgba(253,251,247,0.12);
     
-    --accent-highlight: #D9466F;
-    --accent-secondary: #737373;
+    --accent-highlight: #E59F9F;
+    --accent-secondary: #E59F9F;
   }
 
   * {

@@ -5,9 +5,12 @@ import Link from "next/link"
 import { usePathname } from "next/navigation"
 import { siteConfig } from "@/data/site"
 import { Menu, X } from "lucide-react"
-import { cn } from "@/lib/utils"
 import { ThemeSwitcher } from "@/components/ui/ThemeSwitcher"
+import { cn } from "@/lib/utils"
 import Image from "next/image"
+import { ChevronDown, Mail } from "lucide-react"
+import { Github, Linkedin } from "@/components/ui/icons"
+import { profile } from "@/data/profile"
 
 export function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false)
@@ -43,12 +46,9 @@ export function Navbar() {
               className="object-cover"
             />
           </div>
-          <div className="flex flex-col">
-            <span className="font-bold text-base md:text-lg tracking-tight text-foreground transition-colors group-hover:text-primary">
+          <div className="flex flex-col items-center">
+            <span className="text-xl md:text-2xl font-black text-foreground tracking-tighter hover:text-primary transition-colors duration-300">
               AC
-            </span>
-            <span className="text-[10px] md:text-xs text-muted-foreground font-medium uppercase tracking-wider hidden sm:block">
-              Agentic AI Developer & LLM Engineer
             </span>
           </div>
         </Link>
@@ -56,8 +56,38 @@ export function Navbar() {
         {/* Desktop Navigation */}
         <nav className="hidden md:flex items-center gap-1 lg:gap-2">
           {siteConfig.navItems.map((item) => {
-            // Check active state
             const isActive = pathname === item.href || (item.href !== "/" && pathname.startsWith(item.href))
+            
+            if (item.label === "Contact") {
+              return (
+                <div key={item.label} className="relative group">
+                  <button className="flex items-center gap-1 relative px-3 py-2 text-sm font-medium transition-colors text-muted-foreground hover:text-foreground">
+                    <span className="relative z-10 transition-colors duration-300 group-hover:text-primary">
+                      {item.label}
+                    </span>
+                    <ChevronDown className="w-4 h-4 text-muted-foreground group-hover:text-primary transition-transform duration-300 group-hover:rotate-180" />
+                  </button>
+                  {/* Dropdown Menu */}
+                  <div className="absolute top-full right-0 mt-2 w-48 bg-card border border-border rounded-xl shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 flex flex-col overflow-hidden">
+                    {profile.socials.find(s => s.name === "GitHub")?.url && (
+                      <a href={profile.socials.find(s => s.name === "GitHub")?.url} target="_blank" rel="noreferrer" className="flex items-center gap-3 px-4 py-3 text-sm text-muted-foreground hover:text-primary hover:bg-secondary/50 transition-colors">
+                        <Github className="w-4 h-4" /> GitHub
+                      </a>
+                    )}
+                    {profile.socials.find(s => s.name === "LinkedIn")?.url && (
+                      <a href={profile.socials.find(s => s.name === "LinkedIn")?.url} target="_blank" rel="noreferrer" className="flex items-center gap-3 px-4 py-3 text-sm text-muted-foreground hover:text-primary hover:bg-secondary/50 transition-colors border-t border-border/50">
+                        <Linkedin className="w-4 h-4" /> LinkedIn
+                      </a>
+                    )}
+                    {profile.email && (
+                      <a href={`mailto:${profile.email}`} className="flex items-center gap-3 px-4 py-3 text-sm text-muted-foreground hover:text-primary hover:bg-secondary/50 transition-colors border-t border-border/50">
+                        <Mail className="w-4 h-4" /> Email
+                      </a>
+                    )}
+                  </div>
+                </div>
+              )
+            }
             
             return (
               <Link 
@@ -71,8 +101,6 @@ export function Navbar() {
                 )}>
                   {item.label}
                 </span>
-                
-                {/* Active Underline Indicator */}
                 <span className={cn(
                   "absolute bottom-1 left-3 right-3 h-[2px] bg-primary rounded-full transition-all duration-300",
                   isActive ? "opacity-100 scale-100" : "opacity-0 scale-0 group-hover:opacity-100 group-hover:scale-100"
@@ -106,21 +134,46 @@ export function Navbar() {
         )}
       >
         <div className="container mx-auto px-4 flex flex-col gap-2">
-          {siteConfig.navItems.map((item) => (
-            <Link 
-              key={item.label} 
-              href={item.href}
-              className={cn(
-                "px-4 py-3 text-base font-medium rounded-md transition-colors",
-                pathname === item.href 
-                  ? "bg-primary/10 text-primary" 
-                  : "text-foreground hover:bg-muted hover:text-primary"
-              )}
-              onClick={() => setMobileMenuOpen(false)}
-            >
-              {item.label}
-            </Link>
-          ))}
+          {siteConfig.navItems.map((item) => {
+            if (item.label === "Contact") {
+              return (
+                <div key={item.label} className="px-4 py-2 flex flex-col gap-2">
+                  <span className="text-sm font-bold text-muted-foreground uppercase tracking-wider mb-1">Contact</span>
+                  {profile.socials.find(s => s.name === "GitHub")?.url && (
+                    <a href={profile.socials.find(s => s.name === "GitHub")?.url} target="_blank" rel="noreferrer" className="flex items-center gap-3 px-4 py-2 text-base font-medium rounded-md text-foreground hover:bg-muted hover:text-primary transition-colors" onClick={() => setMobileMenuOpen(false)}>
+                      <Github className="w-5 h-5" /> GitHub
+                    </a>
+                  )}
+                  {profile.socials.find(s => s.name === "LinkedIn")?.url && (
+                    <a href={profile.socials.find(s => s.name === "LinkedIn")?.url} target="_blank" rel="noreferrer" className="flex items-center gap-3 px-4 py-2 text-base font-medium rounded-md text-foreground hover:bg-muted hover:text-primary transition-colors" onClick={() => setMobileMenuOpen(false)}>
+                      <Linkedin className="w-5 h-5" /> LinkedIn
+                    </a>
+                  )}
+                  {profile.email && (
+                    <a href={`mailto:${profile.email}`} className="flex items-center gap-3 px-4 py-2 text-base font-medium rounded-md text-foreground hover:bg-muted hover:text-primary transition-colors" onClick={() => setMobileMenuOpen(false)}>
+                      <Mail className="w-5 h-5" /> Email
+                    </a>
+                  )}
+                </div>
+              )
+            }
+            
+            return (
+              <Link 
+                key={item.label} 
+                href={item.href}
+                className={cn(
+                  "px-4 py-3 text-base font-medium rounded-md transition-colors",
+                  pathname === item.href 
+                    ? "bg-primary/10 text-primary" 
+                    : "text-foreground hover:bg-muted hover:text-primary"
+                )}
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                {item.label}
+              </Link>
+            )
+          })}
           <div className="px-4 py-3 border-t border-border mt-2">
             <ThemeSwitcher />
           </div>
