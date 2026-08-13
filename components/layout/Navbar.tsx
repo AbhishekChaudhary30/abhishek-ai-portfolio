@@ -4,10 +4,10 @@ import { useState, useEffect } from "react"
 import Link from "next/link"
 import { usePathname } from "next/navigation"
 import { siteConfig } from "@/data/site"
-import { profile } from "@/data/profile"
 import { Menu, X } from "lucide-react"
 import { cn } from "@/lib/utils"
 import { ThemeSwitcher } from "@/components/ui/ThemeSwitcher"
+import Image from "next/image"
 
 export function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false)
@@ -35,8 +35,13 @@ export function Navbar() {
         
         {/* Logo & Brand */}
         <Link href="/" className="group flex items-center gap-3">
-          <div className="h-9 w-9 rounded-full bg-primary flex items-center justify-center text-primary-foreground font-bold text-sm tracking-tighter transition-transform group-hover:rotate-12 group-hover:scale-110 duration-300 shadow-[0_0_15px_var(--color-primary)] opacity-90 group-hover:opacity-100">
-            {profile.name.charAt(0)}
+          <div className="h-9 w-9 rounded-full bg-primary flex items-center justify-center text-primary-foreground font-bold text-sm tracking-tighter transition-transform group-hover:rotate-12 group-hover:scale-110 duration-300 shadow-[0_0_15px_var(--color-primary)] opacity-90 group-hover:opacity-100 overflow-hidden relative">
+            <Image
+              src="/images/projects/logo.png"
+              alt="Abhishek Chaudhary"
+              fill
+              className="object-cover"
+            />
           </div>
           <div className="flex flex-col">
             <span className="font-bold text-base md:text-lg tracking-tight text-foreground transition-colors group-hover:text-primary">
